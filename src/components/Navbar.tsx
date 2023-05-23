@@ -1,9 +1,12 @@
 import { getServerSession } from "next-auth";
 import Link from "next/link";
 // import { FC } from "react";
-import { buttonVariants } from "./ui/Button";
+import { buttonVariants } from "@/ui/Button";
+import SignInButton from "@/components/SignInButton";
+import SignOutButton from "@/components/SignOutButton";
+import ThemeToggle from "./ThemeToggle";
 
-const Navbar = async ({}) => {
+const Navbar = async () => {
   const session = await getServerSession();
   return (
     <div className="fixed left-0 right-0 top-0 z-50 flex h-20 items-center justify-between border-b border-slate-300 bg-white/75 shadow-sm backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900">

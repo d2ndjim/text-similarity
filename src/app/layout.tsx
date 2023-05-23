@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import Providers from "@/components/Providers";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-slate-50 antialiased dark:bg-slate-900">
         <Providers>
           {children}
+          {/* @ts-expect-error Server component*/}
           <Navbar />
         </Providers>
         <div className="h-40 md:hidden" />
