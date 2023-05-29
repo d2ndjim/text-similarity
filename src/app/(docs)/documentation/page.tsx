@@ -1,6 +1,7 @@
 import DocumentationTabs from "@/components/DocumentationTabs";
 import LargeHeading from "@/components/ui/LargeHeading";
 import Paragraph from "@/components/ui/Paragraph";
+import 'simplebar-react/dist/simplebar.min.css'
 
 const page = () => {
   return (

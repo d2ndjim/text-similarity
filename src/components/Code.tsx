@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import Highlight, { defaultProps, type Language } from 'prism-react-renderer'
+import Highlight, { defaultProps, type Language } from "prism-react-renderer";
 import darkTheme from "prism-react-renderer/themes/nightOwl";
 import lightTheme from "prism-react-renderer/themes/nightOwlLight";
 import { FC, useEffect, useState } from "react";
@@ -16,13 +16,13 @@ interface CodeProps {
 
 const Code: FC<CodeProps> = ({
   code,
-  language,
   show,
   animated,
   animationDelay,
+  language,
 }) => {
   const { theme: applicationTheme } = useTheme();
-  const [text, setText] = useState(animated ? "" : code);
+  const [text, setText] = useState<string>(animated ? "" : code);
 
   useEffect(() => {
     if (show && animated) {
@@ -41,10 +41,41 @@ const Code: FC<CodeProps> = ({
     }
   }, [code, show, animated, animationDelay]);
 
+  // number of lines
   const lines = text.split(/\r\n|\r|\n/).length;
 
   const theme = applicationTheme === "light" ? lightTheme : darkTheme;
-  return <div>Code</div>;
+
+  return (
+    <Highlight {...defaultProps} code={text} language={language} theme={theme}>
+      {({ className, tokens, getLineProps, getTokenProps }) => (
+        <pre
+          className={
+            className +
+            "no-scrollbar w-fit bg-transparent py-0 transition-all duration-100"
+          }
+          style={{
+            maxHeight: show ? lines * 24 : 0,
+            opacity: show ? 1 : 0,
+          }}
+        >
+          {tokens.map((line, i) => {
+            // eslint-disable-next-line no-unused-vars
+            const { key, ...rest } = getLineProps({ line, key: i });
+            return (
+              <div key={`line-${i}`} style={{ position: "relative" }} {...rest}>
+                {line.map((token, index) => {
+                  // eslint-disable-next-line no-unused-vars
+                  const { key, ...props } = getTokenProps({ token, i });
+                  return <span key={index} {...props} />;
+                })}
+              </div>
+            );
+          })}
+        </pre>
+      )}
+    </Highlight>
+  );
 };
 
 export default Code;
