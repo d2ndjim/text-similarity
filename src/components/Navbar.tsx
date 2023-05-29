@@ -11,7 +11,7 @@ const Navbar = async () => {
     <div className="fixed left-0 right-0 top-0 z-50 flex h-20 items-center justify-between border-b border-slate-300 bg-white/75 shadow-sm backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/75">
       <div className="container mx-auto flex w-full max-w-7xl items-center justify-between">
         <Link href="/" className={buttonVariants({ variant: "link" })}>
-          Text Similarity v1.0
+          Text Similarity v2.0
         </Link>
 
         <div className="md:hidden">
