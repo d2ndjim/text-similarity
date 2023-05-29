@@ -1,3 +1,4 @@
+import DocumentationTabs from "@/components/DocumentationTabs";
 import LargeHeading from "@/components/ui/LargeHeading";
 import Paragraph from "@/components/ui/Paragraph";
 
