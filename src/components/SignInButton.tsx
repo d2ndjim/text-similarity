@@ -13,13 +13,13 @@ const SignInButton: FC<SignInButtonProps> = ({}) => {
   const signInWithGoogle = async () => {
     setIsLoading(true);
     try {
-      await signIn("google", { callbackUrl: "/" });
-    } catch(err) {
+      await signIn("google");
+    } catch (error) {
       toast({
         title: "Error",
         message: "Please try again later",
         type: "error",
-      })
+      });
     }
   };
 
