@@ -14,7 +14,7 @@ const SignOutButton: FC<SignOutButtonProps> = ({}) => {
     setIsLoading(true);
     try {
       await signOut();
-    } catch (err) {
+    } catch (error) {
       toast({
         title: "Error",
         message: "Please try again later",
