@@ -5,7 +5,7 @@ import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 
 const redis = new Redis({
-  // @ts-ignore
+  // @ts-ignoreclear
   url: process.env.REDIS_URL,
   token: process.env.REDIS_SECRET,
 });
