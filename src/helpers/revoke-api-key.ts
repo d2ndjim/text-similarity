@@ -1,15 +1,15 @@
-import { RevokeApiData } from "@/types/api";
-
 export async function revokeApiKey() {
-  const res = await fetch("/api/api-key/create");
-  const data = (await res.json()) as RevokeApiData;
+  const res = await fetch("/api/api-key/revoke", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    // POST request to prevent CSRF in combination with SameSite LAX cookies, see
+    // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite
+  });
+  const data = (await res.json()) as { error?: string };
 
-  if (data.error || !data.createdApiKey) {
-    if (data.error instanceof Array) {
-      throw new Error(data.error.join(", "));
-    }
-    throw new Error(data.error ?? "Something went wrong");
+  if (data.error) {
+    throw new Error(data.error);
   }
-
-  return data.createdApiKey.key;
 }
