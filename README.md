@@ -1,39 +1,34 @@
-# Similarity API
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-A project to learn modern full-stack development made by Josh.
+## Getting Started
 
-## Features
+First, run the development server:
 
-- Rate Limited API routes
-- Protection of sensitive routes
-- Google authentication
-- Typescript
-- A complete API key system to create & revoke user keys
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-- Radix UI Primitives
-- Tailwind CSS
-- Fonts with next/font
-- Icons from Lucide
-- Beautiful dark mode with next-themes
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- Class merging with taiwind-merge
-- Animation with tailwindcss-animate
-- Conditional classes with clsx
-- Variants with class-variance-authority
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Things I forgot in the video
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-- [The mobile menu](https://github.com/joschan21/similarity-api/blob/main/src/components/MobileMenu.tsx)
-- [Where to put the mobile menu](https://github.com/joschan21/similarity-api/blob/main/src/app/layout.tsx)
+## Learn More
 
-## Acknowledgements
+To learn more about Next.js, take a look at the following resources:
 
-- [Awesome UI Components](https://ui.shadcn.com/)
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Feedback
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-If you have any feedback, please reach out to me at admin@wordful.ai
+## Deploy on Vercel
 
-## License
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-[MIT](https://choosealicense.com/licenses/mit/)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

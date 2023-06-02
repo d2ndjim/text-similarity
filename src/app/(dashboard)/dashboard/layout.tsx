@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-  
+
 export const metadata = {
   title: "text-similarity",
   description: "Open source text similarity checker",

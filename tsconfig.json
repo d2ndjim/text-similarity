@@ -38,7 +38,7 @@
       ],
       "@/ui/*": [
         "./src/components/ui/*"
-      ]
+      ],
     }
   },
   "include": [
@@ -46,7 +46,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "C:\\Users\\D2ndjim\\3D Objects\\text-similarity\\.next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

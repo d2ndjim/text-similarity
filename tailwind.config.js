@@ -1,23 +1,20 @@
-const { colors } = require('tailwindcss/colors')
-const { fontFamily } = require('tailwindcss/defaultTheme')
+const { fontFamily } = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors'); 
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ['class'],
+  darkMode: ["class"],
   content: [
-    './app/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-
-    // Or if using `src` directory:
-    './src/**/*.{js,ts,jsx,tsx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     container: {
       center: true,
-      padding: '1.5rem',
+      padding: "1.5rem",
       screens: {
-        '2xl': '1360px',
+        "2xl": "1360px",
       },
     },
     extend: {
@@ -26,10 +23,10 @@ module.exports = {
       },
       colors: {
         ...colors,
-        'light-gold': '#f5bc51',
+        'light-gold': '#F5BC51',
         'dark-gold': '#533519',
       },
     },
   },
   plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
-}
+};

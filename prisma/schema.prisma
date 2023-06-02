@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider     = "mysql"
-  url          = env("DATABASE_URL")
+  provider = "mysql"
+  url      = env("DATABASE_URL")
   relationMode = "prisma"
 }
 
@@ -43,12 +43,11 @@ model User {
   name          String?
   email         String?   @unique
   emailVerified DateTime?
-
-  apiKey   ApiKey[]
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  ApiKey        ApiKey[]
   apiKeyId String?
-  image    String?
-  accounts Account[]
-  sessions Session[]
 }
 
 model ApiKey {
